@@ -11,9 +11,12 @@ def checkout():
     nombre=request.form['first_name']
     apellido=request.form['last_name']
     nro_tarjeta=request.form['student_id']
-    strawberry=request.form['strawberry']
-    raspberry=request.form['raspberry']
-    apple=request.form['apple']
+    strawberry=int(request.form['strawberry'])
+    raspberry=int(request.form['raspberry'])
+    apple=int(request.form['apple'])
+
+    frutas=str(strawberry+raspberry+apple)
+    print("Cobrando a "+nombre+" por "+frutas+ " frutas")
     return render_template("checkout.html", nombre=nombre, apellido=apellido,nro_tarjeta=nro_tarjeta,apple=apple, raspberry=raspberry, strawberry=strawberry)
 
 @app.route('/fruits')         
